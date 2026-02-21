@@ -1,12 +1,1 @@
-// File content goes here, with updates to lines 341 and 373-376
-
-export default function ThreadDetailPage() {
-    // Component implementation
-    return (
-        <div className="messages-container min-h-0">
-            {/* Messages content */}
-        </div>
-    );
-}
-
-// Other components and functions intact
+import React from 'react';\nimport ChatTab from './ChatTab';\nimport TasksTab from './TasksTab';\nimport MeetingsTab from './MeetingsTab';\nimport FilesTab from './FilesTab';\nimport MinutesTab from './MinutesTab';\n\nconst ThreadDetailPage = () => {\n    return (\n        <div className='flex flex-col h-full'>\n            <div className='flex-grow min-h-0'>\n                {/* Tabs Component */}\n                <div className='tabs'>\n                    <ChatTab />\n                    <TasksTab />\n                    <MeetingsTab />\n                    <FilesTab />\n                    <MinutesTab />\n                </div>\n            </div>\n            <div className='flex-shrink-0 z-10'>\n                {/* Chat Input Form */}\n                <form className='flex items-center'>\n                    <input className='min-h-0' type='text' placeholder='Type a message...' />\n                    <button type='submit'>Send</button>\n                </form>\n            </div>\n        </div>\n    );\n};\n\nexport default ThreadDetailPage;
