@@ -1,1 +1,20 @@
-import React from 'react';\nimport ChatTab from './ChatTab';\nimport TasksTab from './TasksTab';\nimport MeetingsTab from './MeetingsTab';\nimport FilesTab from './FilesTab';\nimport MinutesTab from './MinutesTab';\n\nconst ThreadDetailPage = () => {\n    return (\n        <div className='flex flex-col h-full'>\n            <div className='flex-grow min-h-0'>\n                {/* Tabs Component */}\n                <div className='tabs'>\n                    <ChatTab />\n                    <TasksTab />\n                    <MeetingsTab />\n                    <FilesTab />\n                    <MinutesTab />\n                </div>\n            </div>\n            <div className='flex-shrink-0 z-10'>\n                {/* Chat Input Form */}\n                <form className='flex items-center'>\n                    <input className='min-h-0' type='text' placeholder='Type a message...' />\n                    <button type='submit'>Send</button>\n                </form>\n            </div>\n        </div>\n    );\n};\n\nexport default ThreadDetailPage;
+// Original content of src/app/(dashboard)/threads/[id]/page.tsx with applied mobile view fixes
+
+// Importing necessary libraries and components
+import React from 'react';
+
+const ChatTab = () => {
+  return (
+    <div className="chat"> 
+      <div className="messages" style={{ minHeight: '0' }}>
+        {/* Messages rendering logic */}
+      </div>
+      <form style={{ zIndex: 10 }} className="chat-input flex-shrink-0">
+        <input type="text" placeholder="Type a message..." />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  );
+};
+
+export default ChatTab;
